@@ -6,7 +6,7 @@
 /*   By: wonbpark <wonbpark@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/14 12:24:46 by wonbpark          #+#    #+#             */
-/*   Updated: 2022/02/16 14:38:48 by wonbpark         ###   ########.fr       */
+/*   Updated: 2022/02/20 16:52:42 by wonbpark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,9 @@ void	ft_check_Q(int board[10], int Q, int *solcount)
 		(*solcount)++;
 		return ;
 	}
-	i = 0;
-	while (i < 10)
+	i = -1;
+	while (++i < 10)
 	{
-		i++;
 		if (ft_is_valid(board, Q, i) == 0)
 			continue ;
 		board[Q] = i;

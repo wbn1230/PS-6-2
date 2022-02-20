@@ -1,46 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_prime.c                                      :+:      :+:    :+:   */
+/*   ft_boolean.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wonbpark <wonbpark@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/14 11:17:18 by wonbpark          #+#    #+#             */
-/*   Updated: 2022/02/16 14:09:33 by wonbpark         ###   ########.fr       */
+/*   Created: 2022/02/20 20:06:03 by wonbpark          #+#    #+#             */
+/*   Updated: 2022/02/20 20:06:04 by wonbpark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*int	ft_sqrt(int nb)
-{
-	int	i;
-	int	sqr;
+#ifndef FT_BOOLEAN_H
+# define FT_BOOLEAN_H
 
-	i = 0;
-	while (i <= 46340)
-	{
-		sqr = i * i;
-		if (sqr > nb)
-		{
-			break ;
-		}
-		i++;
-	}
-	i--;
-	return (i);
-}
-
-int	ft_is_prime(int nb)
-{
-	int	i;
-
-	if (nb < 2)
-		return (0);
-	i = 2;
-	while (i <= ft_sqrt(nb))
-	{
-		if (nb % i == 0)
-			return (0);
-		i++;
-	}
-	return (1);
-}*/
+# define	TRUE 1
+# define	FALSE 0
+# define	EVEN_MSG "I have an even number of arguments.\n"
+# define	ODD_MSG "I have an odd number of arguments.\n"
+# define	SUCCESS	0
+# define 	EVEN(nbr) nbr % 2 == 0
+typedef int	t_bool;
+#endif
