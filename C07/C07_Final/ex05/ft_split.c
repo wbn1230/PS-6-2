@@ -19,12 +19,14 @@ char	*ft_strdup(char *str)
 {
 	int	i;
 	int	j;
+	int	len;
 	char	*dest;
-
+	
 	i = 0;
 	while (str[i] != '\0')
 		i++;
-	dest = (char *)malloc(sizeof(char) * i + 1);
+	len = i;
+	dest = (char *)malloc(sizeof(char) * len + 1);
 	if (!dest)
 		return (0);
 	j = 0;
@@ -63,7 +65,7 @@ char	**split_str(char *str, char **wdarr, char *charset)
 			j = 0;
 			wdarr[k] = (char *)malloc(sizeof(char) * 1000);
 			while (ft_is_charset(charset, str[i]) == 0)
-				wdarr[k++][j] = str[i++];
+				wdarr[k][j++] = str[i++];
 			wdarr[k++][j] = '\0';
 		}
 		else
