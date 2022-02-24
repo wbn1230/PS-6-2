@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_point.h                                         :+:      :+:    :+:   */
+/*   ft_count_if.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wonbpark <wonbpark@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/20 20:05:49 by wonbpark          #+#    #+#             */
-/*   Updated: 2022/02/24 16:29:57 by wonbpark         ###   ########.fr       */
+/*   Created: 2022/02/23 16:37:23 by wonbpark          #+#    #+#             */
+/*   Updated: 2022/02/23 20:58:25 by wonbpark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_POINT_H
-# define FT_POINT_H
+int	ft_count_if(char **tab, int length, int(*f)(char*))
+{
+	int	i;
+	int	count;
 
-typedef struct s_pointer{
-	int	x;
-	int	y;
-}t_point;
-
-#endif
+	i = 0;
+	count = 0;
+	while (i < length)
+	{
+		if (f(tab[i]) != 0)
+			count++;
+		i++;
+	}
+	return (count);
+}

@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_point.h                                         :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wonbpark <wonbpark@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/20 20:05:49 by wonbpark          #+#    #+#             */
-/*   Updated: 2022/02/24 16:29:57 by wonbpark         ###   ########.fr       */
+/*   Created: 2022/02/21 19:50:22 by wonbpark          #+#    #+#             */
+/*   Updated: 2022/02/21 21:08:45 by wonbpark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_POINT_H
-# define FT_POINT_H
+int	ft_strcmp(char *s1, char *s2)
+{
+	int	i;
+	int	diff;
 
-typedef struct s_pointer{
-	int	x;
-	int	y;
-}t_point;
-
-#endif
+	i = 0;
+	while (s1[i] != '\0' || s2[i] != '\0')
+	{
+		if (s1[i] != s2[i])
+			break ;
+		i++;
+	}
+	diff = s1[i] - s2[i];
+	return (diff);
+}

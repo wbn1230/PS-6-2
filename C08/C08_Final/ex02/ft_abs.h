@@ -6,13 +6,13 @@
 /*   By: wonbpark <wonbpark@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 20:06:12 by wonbpark          #+#    #+#             */
-/*   Updated: 2022/02/20 20:06:13 by wonbpark         ###   ########.fr       */
+/*   Updated: 2022/02/24 16:29:53 by wonbpark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_ABS_H
 # define FT_ABS_H
 
-# define	ABS(VALUE) ((VALUE > 0) ? VALUE : -VALUE)
+# define	ABS(VALUE) (((VALUE) > 0) ? (VALUE) : -(VALUE))
 
 #endif

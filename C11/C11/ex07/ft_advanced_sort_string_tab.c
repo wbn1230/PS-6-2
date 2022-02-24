@@ -1,21 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_point.h                                         :+:      :+:    :+:   */
+/*   ft_advanced_sort_string_tab.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wonbpark <wonbpark@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/20 20:05:49 by wonbpark          #+#    #+#             */
-/*   Updated: 2022/02/24 16:29:57 by wonbpark         ###   ########.fr       */
+/*   Created: 2022/02/23 19:24:07 by wonbpark          #+#    #+#             */
+/*   Updated: 2022/02/24 10:47:40 by wonbpark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_POINT_H
-# define FT_POINT_H
+void	ft_swapp(char **tab1, char **tab2)
+{
+	char	*temp;
 
-typedef struct s_pointer{
-	int	x;
-	int	y;
-}t_point;
+	temp = *tab1;
+	*tab1 = *tab2;
+	*tab2 = temp;
+}
 
-#endif
+void	ft_advanced_sort_string_tab(char **tab, int(*cmp)(char *, char *))
+{
+	int	i;
+	int	j;
+
+	j = 0;
+	while (tab[j] != 0)
+	{
+		i = 0;
+		while (tab[i + 1] != 0)
+		{
+			if ((*cmp)(tab[i], tab[i + 1]) > 0)
+				ft_swapp(&tab[i], &tab[i + 1]);
+			i++;
+		}
+		j++;
+	}
+}

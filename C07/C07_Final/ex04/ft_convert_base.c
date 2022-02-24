@@ -6,11 +6,9 @@
 /*   By: wonbpark <wonbpark@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 16:28:15 by wonbpark          #+#    #+#             */
-/*   Updated: 2022/02/20 18:47:56 by wonbpark         ###   ########.fr       */
+/*   Updated: 2022/02/22 17:03:22 by wonbpark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
 
 int	ft_strlen(char *str)
 {
@@ -90,8 +88,11 @@ int	ft_atoi_base(char *str, char *base)
 	while ((9 <= str[i] && str[i] <= 13) || str[i] == 32)
 		i++;
 	while (str[i] == '-' || str[i] == '+')
-		if (str[i++] == '-')
+	{
+		if (str[i] == '-')
 			sign *= -1;
+		i++;
+	}
 	while (ft_n_in_base(str[i], base) != -1)
 	{
 		ans = (ans * ft_strlen(base)) + ft_n_in_base(str[i], base);
@@ -99,25 +100,3 @@ int	ft_atoi_base(char *str, char *base)
 	}
 	return (ans * sign);
 }
-
-
-char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
-{
-	int	i;
-	int	nb_from;
-	int	nb_to;
-	char	*res;
-
-	if (ft_is_valid(base_from) == 0 || ft_is_valid(base_to) == 0)
-		return (0);
-	nb_from = ft_atoi_base(nbr, base_from);
-	res = (char *)malloc(sizeof(char) * ft_strlen(base_to));
-	nb_to = ft_putnbr_base(nb_from, base_to);
-	/*nb_to = ft_atoi_base2(nb_from, base_to);*/
-
-	return (res);
-}
-
-
-
-

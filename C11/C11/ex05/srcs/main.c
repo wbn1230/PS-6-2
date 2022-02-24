@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: wonbpark <wonbpark@student.42seoul.>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/24 09:00:09 by wonbpark          #+#    #+#             */
+/*   Updated: 2022/02/24 09:58:24 by wonbpark         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include <unistd.h>
-#include "../includes/do_op.h"
+#include "do_op.h"
 
 int	calculate(int a, char o, int b)
 {
@@ -12,7 +24,6 @@ int	calculate(int a, char o, int b)
 	calculate[2] = &op_mult;
 	calculate[3] = &op_div;
 	calculate[4] = &op_mod;
-
 	res = 1;
 	if (o == '+')
 		res = calculate[0](a, b);
@@ -38,7 +49,6 @@ void	do_op(char *r, char o, char *l)
 	res = 1;
 	a = ft_atoi(r);
 	b = ft_atoi(l);
-
 	if (!(o == '+' || o == '-' || o == '*' || o == '/' || o == '%'))
 		write (1, "0\n", 2);
 	else if (o == '/' && b == 0)
@@ -47,7 +57,7 @@ void	do_op(char *r, char o, char *l)
 		write(1, "Stop : modulo by zero\n", 22);
 	else
 	{
-		ft_putnbr(calculate(a, o ,b));
+		ft_putnbr(calculate(a, o, b));
 		write(1, "\n", 1);
 	}
 }
@@ -61,9 +71,5 @@ int	main(int argc, char **argv)
 		else
 			do_op(argv[1], argv[2][0], argv[3]);
 	}
-	return 0;
+	return (0);
 }
-	
-
-
-

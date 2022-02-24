@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_point.h                                         :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wonbpark <wonbpark@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/20 20:05:49 by wonbpark          #+#    #+#             */
-/*   Updated: 2022/02/24 16:29:57 by wonbpark         ###   ########.fr       */
+/*   Created: 2022/02/21 19:48:34 by wonbpark          #+#    #+#             */
+/*   Updated: 2022/02/21 19:49:34 by wonbpark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_POINT_H
-# define FT_POINT_H
+#include <unistd.h>
 
-typedef struct s_pointer{
-	int	x;
-	int	y;
-}t_point;
+void	ft_putstr(char *str)
+{
+	int	i;
 
-#endif
+	i = 0;
+	while (str[i] != '\0')
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+}

@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_point.h                                         :+:      :+:    :+:   */
+/*   ft_map.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wonbpark <wonbpark@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/20 20:05:49 by wonbpark          #+#    #+#             */
-/*   Updated: 2022/02/24 16:29:57 by wonbpark         ###   ########.fr       */
+/*   Created: 2022/02/23 15:27:01 by wonbpark          #+#    #+#             */
+/*   Updated: 2022/02/23 16:33:40 by wonbpark         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_POINT_H
-# define FT_POINT_H
+#include <stdlib.h>
 
-typedef struct s_pointer{
-	int	x;
-	int	y;
-}t_point;
+int	*ft_map(int *tab, int length, int(*f)(int))
+{
+	int	i;
+	int	*appf;
 
-#endif
+	appf = (int *)malloc(sizeof(int) * length);
+	i = 0;
+	while (i < length)
+	{
+		appf[i] = f(tab[i]);
+		i++;
+	}
+	return (appf);
+}
